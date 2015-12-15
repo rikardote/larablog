@@ -18,10 +18,14 @@
                   <h3 class="text-center">{{ $article->title }}</h3>
                   
   								<hr>
+                  <small>
   								<i class="fa fa-folder-open-o"></i><a href="{{ route('front.category', $article->category->id) }}">{{ $article->category->name }}</a>
-  								<div class="pull-right">
-  									<i class="fa fa-clock-o"></i> {{ $article->created_at->diffForHumans() }}
+  								<div class="pull pull-right">
+  									<i class="fa fa-clock-o"></i> {{ $article->created_at->diffForHumans() }} 
+                    <span class="badge">{{ $article->comments->count() }}</span> Comentarios
   								</div>
+                  </small>
+
   						</div>
   					</div>
   				</div>

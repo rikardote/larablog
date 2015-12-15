@@ -29,9 +29,12 @@ Route::get('/autor/{id}', [
 	'uses' => 'FrontController@autor'
 ]);
 
-
-
-
+//Rutas de los comentarios
+Route::post('articulo/{id}', [
+	'uses' => 'CommentsController@store',
+	'as' => 'comments.store'
+	
+	]);
 
 //Rutas del panel de administracion
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){

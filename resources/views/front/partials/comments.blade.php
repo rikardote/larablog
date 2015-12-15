@@ -1,4 +1,4 @@
-{!! Form::open() !!}
+{!! Form::open(['route' => ['comments.store', $article->id], 'method' => 'POST']) !!}
   <div class="col-md-4">
     <div class="form-group">
       {!! Form::label('name', 'Nombre') !!}
@@ -9,8 +9,8 @@
       {!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'ejemplo@mail.com', 'required']) !!}
     </div>
     <div class="form-group">
-      {!! Form::label('coment', 'Comentario') !!}
-      {!! Form::textarea('coment', null, ['class' => 'form-control', 'placeholder' => 'Comentario', 'required']) !!}
+      {!! Form::label('comment', 'Comentario') !!}
+      {!! Form::textarea('comment', null, ['class' => 'form-control', 'placeholder' => 'Comentario', 'required']) !!}
     </div>  
     <div class="form-group">
       {!! Form::submit('Ingresar', ['class' => 'btn btn-primary']) !!}
