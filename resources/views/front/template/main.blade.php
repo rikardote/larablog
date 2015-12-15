@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<title>@yield('title', 'Home') | Test</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>@yield('title', 'Home') | Blog</title>
 	<link rel="stylesheet" href="{{ asset('plugins/bootstrap/css/journal/bootstrap.css') }}">
 	<link rel="stylesheet" href="{{ asset('css/general.css') }}">
 	<link rel="stylesheet" href="{{ asset('plugins/font-awesome/css/font-awesome.min.css') }}">
@@ -17,8 +18,10 @@
 	
 		<footer>
 			<hr>
-			Todos los derechos reservadors &copy {{ date('Y') }}
+			
 			<div class="pull-right">
+				Todos los derechos Reservados&copy {{ date('Y') }}
+				<br>
 				{!! link_to_route('admin.auth.login', 'Admin') !!}
 				Ricardo Fuentes
 			</div>

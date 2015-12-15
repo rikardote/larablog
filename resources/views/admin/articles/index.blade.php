@@ -4,13 +4,12 @@
 
 @section('content')
 	<a href="{{ route('admin.articles.create') }}" class="btn btn-info">Registrar Nuevo Articulo</a>
-{!! Form::open(['route' => 'admin.articles.index', 'method' => 'GET','class' => 'navbar-form pull-right']) !!}
+	{!! Form::open(['route' => 'admin.articles.index', 'method' => 'GET','class' => 'navbar-form pull-right']) !!}
 	<div class="input-group">
-		
 		{!! Form::text('title', null, ['class' => 'form-control', 'placeholder' => 'Buscar articulos...', 'aria-describedby' => 'search']) !!}
 		<span class="input-group-addon" id="search"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
 	</div>
-{!! Form::close() !!}
+	{!! Form::close() !!}
 	<hr>
 	<table class="table table-striped">
 		<thead>
@@ -38,4 +37,5 @@
 		</tbody>
 		
 	</table>
+	{!! $articles->render() !!}
 @endsection

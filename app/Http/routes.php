@@ -16,9 +16,17 @@ Route::get('/', [
 	'as' => 'front.index',
 	'uses' => 'FrontController@index'
 ]);
-Route::get('/show/{name}', [
+Route::get('/articulo/{name}', [
 	'as' => 'front.show',
-	'uses' => 'FrontController@show'
+	'uses' => 'FrontController@articulo'
+]);
+Route::get('/categoria/{id}', [
+	'as' => 'front.category',
+	'uses' => 'FrontController@categoria'
+]);
+Route::get('/autor/{id}', [
+	'as' => 'front.autor',
+	'uses' => 'FrontController@autor'
 ]);
 
 

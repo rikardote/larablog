@@ -39,4 +39,5 @@ class Article extends Model implements SluggableInterface
     {
         return $query->where('title', 'LIKE', "%$title%");
     }
+    
 }
