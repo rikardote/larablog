@@ -17,3 +17,9 @@ a:hover
 it{
   font-style: italic;
 }
+.tab-pane{
+    height:600px;
+    overflow-x: hidden;
+    overflow-y:scroll;
+
+}

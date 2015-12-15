@@ -21,7 +21,7 @@
 </div>
 {!! Form::close() !!}
 <div class="col-md-8">
- <div class="panel panel-default">
+ <div class="tab-pane panel panel-default">
     @foreach($article->comments as $comment)
       <div class="panel-body">
         <it class="font-italic">{{ $comment->comment }}</it>
