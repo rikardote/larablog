@@ -10,6 +10,12 @@
               <i class="fa fa-folder-open-o"></i><a href="{{ route('front.category', $article->category->id) }}">{{ $article->category->name }}</a><br>
               Por: <a href="{{ route('front.autor', $article->user->id) }}">{{ $article->user->name }}</a><br>
               <i class="fa fa-clock-o"></i> {{ $article->created_at->diffForHumans() }} 
+              <div class="pull pull-right">
+                Tags: 
+                @foreach($my_tags as $tag)
+                  <label class="label label-default">{{ $tag->name }}</label>
+                @endforeach 
+              </div>
        </small>
        <div class="text-justify">
           <article>
