@@ -26,11 +26,12 @@
                {!! $article->content !!}
              </div>
           </article>
-       </div>
+          <hr>
           
-        
+          @include('front.partials.comments')
+        </div>
+       
     </div>
-
   </div>
   <div class="col-md-4 aside">
       @include('front.partials.aside')

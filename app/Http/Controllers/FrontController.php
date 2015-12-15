@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Article;
-use App\Tag;
+use App\Comment;
+
 
 use Carbon\Carbon;
 
@@ -26,8 +27,10 @@ class FrontController extends Controller
         $articles->each(function($articles){
           $articles->category;  
           $articles->images;  
+          
         });
-        
+       
+              
         return view('front.index')->with('articles', $articles);
     }
 
@@ -65,10 +68,12 @@ class FrontController extends Controller
         $my_tags = $article->tags;
         $article->category;  
         $article->images;  
+        $article->comments;  
 
-        return view('front.show')
+       return view('front.show')
           ->with('article', $article)
           ->with('my_tags', $my_tags);
+        
     }
 
 }
