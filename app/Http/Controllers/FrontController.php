@@ -8,8 +8,8 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Article;
 use App\Comment;
-
-
+use App\Category;
+use App\Tag;
 use Carbon\Carbon;
 
 
@@ -34,7 +34,7 @@ class FrontController extends Controller
         return view('front.index')->with('articles', $articles);
     }
 
-    public function categoria($id)
+    /*public function categoria($id)
     {
 
         $articles = Article::orderBy('id', 'DESC')->where('category_id',$id)->paginate(4);          
@@ -46,7 +46,7 @@ class FrontController extends Controller
         
         return view('front.index')->with('articles', $articles);
     }
-
+*/
     public function autor($id)
     {
 
@@ -63,6 +63,7 @@ class FrontController extends Controller
 
     public function articulo($slug)
     {
+
         $article = Article::findBySlug($slug);
         
         $my_tags = $article->tags;
@@ -74,6 +75,30 @@ class FrontController extends Controller
           ->with('article', $article)
           ->with('my_tags', $my_tags);
         
+    }
+    public function searchCategory($name)
+    {
+        $category = Category::SearchCategory($name)->first();
+        $articles = $category->articles()->paginate(4);
+
+        $articles->each(function($articles){
+          $articles->category;  
+          $articles->images;  
+        });
+        
+        return view('front.index')->with('articles', $articles);
+    }
+    public function searchTag($name)
+    {
+        $tag = Tag::SearchTag($name)->first();
+        $articles = $tag->articles()->paginate(4);
+
+        $articles->each(function($articles){
+          $articles->category;  
+          $articles->images;  
+        });
+        
+        return view('front.index')->with('articles', $articles);
     }
 
 }

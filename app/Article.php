@@ -39,9 +39,10 @@ class Article extends Model implements SluggableInterface
     {
         return $query->where('title', 'LIKE', "%$title%");
     }
+    
     public function Comments()
     {
-        return $this->hasMany('App\Comment');
+        return $this->hasMany('App\Comment')->orderBy('created_At', 'desc');
     }
     
 }

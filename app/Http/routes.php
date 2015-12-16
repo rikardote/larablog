@@ -20,13 +20,24 @@ Route::get('/articulo/{name}', [
 	'as' => 'front.show',
 	'uses' => 'FrontController@articulo'
 ]);
-Route::get('/categoria/{id}', [
+/*
+Route::get('/categoria/{name}', [
 	'as' => 'front.category',
 	'uses' => 'FrontController@categoria'
 ]);
+*/
+Route::get('/categories/{name}', [
+	'as' => 'front.search.category',
+	'uses' => 'FrontController@searchCategory'
+]);
+
 Route::get('/autor/{id}', [
 	'as' => 'front.autor',
 	'uses' => 'FrontController@autor'
+]);
+Route::get('/tags/{name}', [
+	'as' => 'front.search.tag',
+	'uses' => 'FrontController@searchTag'
 ]);
 
 //Rutas de los comentarios

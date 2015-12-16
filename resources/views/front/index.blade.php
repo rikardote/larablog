@@ -19,7 +19,7 @@
                   
   								<hr>
                   <small>
-  								<i class="fa fa-folder-open-o"></i><a href="{{ route('front.category', $article->category->id) }}">{{ $article->category->name }}</a>
+  								<i class="fa fa-folder-open-o"></i><a href="{{ route('front.search.category', $article->category->name) }}">{{ $article->category->name }}</a>
   								<div class="pull pull-right">
   									<i class="fa fa-clock-o"></i> {{ $article->created_at->diffForHumans() }} 
                     <span class="badge">{{ $article->comments->count() }}</span> Comentarios

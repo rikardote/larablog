@@ -7,13 +7,15 @@
     <div class="col-md-8">
       <div class="row">
        <small>
-              <i class="fa fa-folder-open-o"></i><a href="{{ route('front.category', $article->category->id) }}">{{ $article->category->name }}</a><br>
+              <i class="fa fa-folder-open-o"></i><a href="{{ route('front.search.category', $article->category->name) }}">{{ $article->category->name }}</a><br>
               Por: <a href="{{ route('front.autor', $article->user->id) }}">{{ $article->user->name }}</a><br>
               <i class="fa fa-clock-o"></i> {{ $article->created_at->diffForHumans() }} 
               <div class="pull pull-right">
                 Tags: 
                 @foreach($my_tags as $tag)
-                  <label class="label label-default">{{ $tag->name }}</label>
+                  <a href="{{ route('front.search.tag', $tag->name) }}">
+                    <span class="label label-default">{{ $tag->name }}</span>
+                  </a>
                 @endforeach 
               </div>
        </small>
